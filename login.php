@@ -10,7 +10,7 @@
 		<h1>
 			Scripture Tracker
 		</h1>
-		<form action="/controllers/login.php">
+		<form action="../controllers/login.php" method="post" target="_blank">
 			<label>Username/Email:<br />
 				<input type="text" name="username" />
 			</label>
@@ -19,7 +19,7 @@
 				<input type="password" name="password" />
 			</label>
 			<br /><br />
-			<input type="submit" value="Submit" />
+			<input type="submit" value="Sign in" />
 		</form>
 		<br />
 		<em><a href="account_new.php">Not registered? Create an account</a></em>
