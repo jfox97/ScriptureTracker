@@ -10,7 +10,7 @@
 		<h1>
 			Scripture Tracker
 		</h1>
-		<form action="../controllers/login.php" method="post" target="_blank">
+		<form action="/controllers/login.php" method="post" target="_blank">
 			<label>Username/Email:<br />
 				<input type="text" name="username" />
 			</label>
