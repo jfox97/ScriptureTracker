@@ -22,6 +22,6 @@
 			<input type="submit" value="Sign in" />
 		</form>
 		<br />
-		<em><a href="account_new.php">Not registered? Create an account</a></em>
+		<em><a href="create_account.php">Not registered? Create an account</a></em>
 	</body>
 </html>

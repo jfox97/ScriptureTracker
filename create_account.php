@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h1>Create Account</h1>
-		<form action="/controllers/account_new.php" method="post">
+		<form action="controllers/create_account.php" method="post">
 			<label>First Name:<br />
 				<input type="text" name="firstname" />
 			</label>
