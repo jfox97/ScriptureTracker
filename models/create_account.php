@@ -23,8 +23,6 @@ function createAccount($firstname, $lastname, $email, $username, $password)
 					 $username,
 					 $hashed_password);
 	$sql->execute();
-	
-	echo "Account created succesffully";
 }
 
 ?>

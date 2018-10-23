@@ -35,5 +35,8 @@
 			<br /><br />
 			<input type="submit" value="Create Account" />
 		</form>
+		<p>
+			Back to <a href='login.php'>login</a>.
+		</p>
 	</body>
 </html>

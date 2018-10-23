@@ -1,7 +1,5 @@
 <?php
 
-//require_once "../../config.ini";
-
 function ConnectMaster()
 {
 	$config = parse_ini_file("../../config.ini", true);
@@ -14,6 +12,7 @@ function ConnectMaster()
 	if ($connection->connect_errno)
 	{
 		exit("Database Connection Failed. Reason: ".$connection->connect_error);
+		throw new Exception("Database connection failed");
 	}
 	
 	return $connection;
