@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
+{
+	echo "You are already logged in.  Yay!";
+}
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +16,7 @@
 		<h1>
 			Scripture Tracker
 		</h1>
-		<form action="/controllers/login.php" method="post" target="_blank">
+		<form action="controllers/login.php" method="post">
 			<label>Username/Email:<br />
 				<input type="text" name="username" />
 			</label>
