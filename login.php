@@ -3,14 +3,17 @@ session_start();
 
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 {
-	echo "You are already logged in.  Yay!";
+	ob_start();
+	header("Location: app.php");
+	ob_end_flush();
+	die();
 }
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ScriptureTracker - Login</title>
+		<title>Scripture Tracker - Login</title>
 	</head>
 	<body>
 		<h1>

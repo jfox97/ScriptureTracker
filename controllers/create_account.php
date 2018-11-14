@@ -25,6 +25,8 @@ try {
 			die();
 		}
 	}
+	
+	$masterConnection->close();
 
 	createAccount($firstname, $lastname, $email, $username, $password);
 	

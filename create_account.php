@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ScriptureTracker - Create Account</title>
+		<title>Scripture Tracker - Create Account</title>
 	</head>
 	<body>
 		<h1>Create Account</h1>

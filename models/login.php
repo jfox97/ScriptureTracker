@@ -44,18 +44,29 @@ function login($username, $password, $isEmail)
 					$_SESSION["email"] = $email;
 					$_SESSION["username"] = $tableUsername;
 					
-					echo "Login successful!";
+					$masterConnection->close();
+					return;
 				}
 				else
 				{
+					$masterConnection->close();
 					redirectToLogin("incorrect_password");
 				}
 			}
 		}
 		else
+		{
+			$masterConnection->close();
 			redirectToLogin("no_account_found");
+		}
 	}
 	else
+	{
+		$masterConnection->close();
 		redirectToLogin("connection_failed");
+	}
+	
+	$masterConnection->close();
+	redirectToLogin("connection_failed");
 }
 ?>
