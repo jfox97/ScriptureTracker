@@ -24,23 +24,9 @@ function createAccount($firstname, $lastname, $email, $username, $password)
 					 $hashed_password);
 	$sql->execute();
 	
+	$accountId = $masterConnection->insert_id;
 	$masterConnection->close();
-	$masterConnection = ConnectMaster();
-	
-	$selectQuery = "SELECT AccountID FROM Accounts WHERE Email = '$email'";
-	$result = $masterConnection->query($selectQuery);
-	
-	if ($row = $result->fetch_assoc())
-	{
-		$accountId = $row["AccountID"];
-		$masterConnection->close();
-		CreateAccountDb($accountId);
-	}
-	else
-	{
-		$masterConnection->close();
-		throw new Exception("Account db creation failed");
-	}
+	CreateAccountDb($accountId);
 }
 
 ?>
