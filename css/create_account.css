@@ -16,6 +16,30 @@ h1 {
 	font-size: 24px
 }
 
+#error {
+	color: #d6d6d6;
+	font-family: 'Roboto';
+	font-weight: 500;
+}
+
+.error {
+	color: #d6d6d6;
+	font-family: 'Roboto';
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.confirmation {
+	color: #00ff08;
+	font-family: 'Roboto';
+	font-weight: 500;
+	margin-bottom: 8px;
+}
+
+.hidden {
+	display: none;
+}
+
 input[type=text] {
 	width: 100%;
 	padding: 12px 20px;

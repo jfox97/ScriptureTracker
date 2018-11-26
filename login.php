@@ -22,6 +22,12 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 			<h1>
 				Scripture Tracker
 			</h1>
+			<?php
+				if (isset($_GET["error"]))
+				{
+					echo "<span id='error'>Incorrect user or password</span>";
+				}
+			?>
 			<form action="controllers/login.php" method="post">
 				<input type="text" 
 					   name="username"
