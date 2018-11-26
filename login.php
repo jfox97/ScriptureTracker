@@ -14,23 +14,30 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 <html>
 	<head>
 		<title>Scripture Tracker - Login</title>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,500">
+		<link rel="stylesheet" type="text/css" href="css/login.css">
 	</head>
 	<body>
-		<h1>
-			Scripture Tracker
-		</h1>
-		<form action="controllers/login.php" method="post">
-			<label>Username/Email:<br />
-				<input type="text" name="username" />
-			</label>
-			<br />
-			<label>Password:<br />
-				<input type="password" name="password" />
-			</label>
-			<br /><br />
-			<input type="submit" value="Sign in" />
-		</form>
-		<br />
-		<em><a href="create_account.php">Not registered? Create an account</a></em>
+		<div id="login_widget">
+			<h1>
+				Scripture Tracker
+			</h1>
+			<form action="controllers/login.php" method="post">
+				<input type="text" 
+					   name="username"
+					   placeholder="Email/Username"
+					   onfocus="this.placeholder=''"
+					   onblur="this.placeholder='Email/Username'"/>
+				<input type="password" 
+					   name="password" 
+					   placeholder="Password"
+					   onfocus="this.placeholder=''"
+					   onblur="this.placeholder='Password'"/>
+				<input type="submit" value="Sign in" />
+			</form>
+			<p>
+				<em><a href="create_account.php">Not registered? Create an account</a></em>
+			</p>
+		</div>
 	</body>
 </html>

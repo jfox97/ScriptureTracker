@@ -1,0 +1,56 @@
+body {
+	padding-top: 100px;
+	background-color: #2793cf;
+}
+
+h1 {
+	color: white;
+	font-family: 'Roboto';
+	font-weight: 500;
+	font-size: 36px;
+	width: 100%;
+	text-align: center;
+}
+
+h2 {
+	color: white;
+	font-family: 'Roboto';
+	font-weight: 300;
+	font-size: 24px;
+	width: 100%;
+	text-align: center;
+}
+
+p {
+	color: white;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-family: 'Roboto';
+	font-weight: 300;
+	width: 100%;
+	text-align: center;
+}
+
+a:link {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #fefefe;
+}
+
+a:visited {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #fefefe;
+}
+
+a:hover {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #efefef;
+}
+
+a:active {
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: #fefefe;
+}
