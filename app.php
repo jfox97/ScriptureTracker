@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if ((isset($_SESSION["loggedin"]) === false ) || ($_SESSION["loggedin"] === false))
@@ -9,6 +8,9 @@ if ((isset($_SESSION["loggedin"]) === false ) || ($_SESSION["loggedin"] === fals
 	ob_end_flush();
 	die();
 }
+
+require_once "controllers/app.php";
+$days = getWeeklyGoals();
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +20,12 @@ if ((isset($_SESSION["loggedin"]) === false ) || ($_SESSION["loggedin"] === fals
 	</head>
 	<body>
 		<h1>Scripture Tracker</h1>
+		<?php
+			foreach ($days as $day)
+			{
+				echo $day->get_goal_list();
+			}
+		?>
 		<div id="addGoalModal" class="modal">
 		<h2>New Goal</h2>
 			<form action="json/add_goal.php" method="post">
@@ -32,16 +40,5 @@ if ((isset($_SESSION["loggedin"]) === false ) || ($_SESSION["loggedin"] === fals
 				<input type="submit" value="Add Goal" />
 			</form>
 		</div>
-		<br />
-		<?php 
-		echo $_SESSION["loggedin"]."<br />";
-		echo $_SESSION["accountId"]."<br />";
-		echo $_SESSION["created"]."<br />";
-		echo $_SESSION["nameLast"]."<br />";
-		echo $_SESSION["nameFirst"]."<br />";
-		echo $_SESSION["nameFull"]."<br />";
-		echo $_SESSION["email"]."<br />";
-		echo $_SESSION["username"]."<br />";
-		?>
 	</body>
 </html>

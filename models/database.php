@@ -2,7 +2,7 @@
 
 function ConnectMaster()
 {
-	$config = parse_ini_file("../../config.ini", true);
+	$config = parse_ini_file(__DIR__ . '\..\..\config.ini', true);
 	$connection = new mysqli(
 		"localhost", 
 		$config["database"]["username"],
@@ -20,7 +20,7 @@ function ConnectMaster()
 
 function ConnectAccount($accountId)
 {
-	$config = parse_ini_file("../../config.ini", true);
+	$config = parse_ini_file(__DIR__ . '\..\..\config.ini', true);
 	$connection = new mysqli(
 		"localhost", 
 		$config["database"]["username"],
