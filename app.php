@@ -31,13 +31,15 @@ $days = getWeeklyGoals();
 					echo "</div>";
 				}
 			?>
+			<div id="new_goal_container">
+				<button id="new_goal_button">New Goal</button>
+			</div>
 		</div>
-		<button id="new_goal_button">New Goal</button>
 		<div id="add_goal_modal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
 				<h2>New Goal</h2>
-				<form action="json/add_goal.php" method="post">
+				<form action="json/add_goal.php" onsubmit="return validate()" method="post">
 					Standard Work:<br />
 					<input type="radio" name="collection" value="OldTestament" checked /> Old Testament<br />
 					<input type="radio" name="collection" value="NewTestament" /> New Testament<br />
