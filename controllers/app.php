@@ -94,11 +94,15 @@ function getWeeklyGoals()
 		die();
 	}
 	
+	date_default_timezone_set('US/Mountain');
+	
 	$days = [];
 	for ($i = 0; $i < 7; $i++)
 	{
 		$days[$i] = new day();
-		$days[$i]->set_name("Day $i");
+		$dateString = date("Y-m-d", time());
+		$day = date("l m-d", strtotime($dateString . " + $i days"));
+		$days[$i]->set_name($day);
 	}
 	
 	$accountId = $_SESSION["accountId"];
@@ -106,9 +110,9 @@ function getWeeklyGoals()
 	
 	while ($goal = $goals->fetch_assoc())
 	{
-		if (strtotime(date("Y-m-d", time())) > strtotime($goal["EndDate"] . " + 1 days"))
+		if (strtotime(date("Y-m-d", time())) > strtotime($goal["EndDate"]))
 			continue;
-		if (strtotime(date("Y-m-d", time())) < strtotime($goal["StartDate"] . " - 8 days"))
+		if (strtotime(date("Y-m-d", time())) < strtotime($goal["StartDate"] . " - 6 days"))
 			continue;
 		
 		$collectionName = $goal["StartScripture"];
@@ -121,7 +125,6 @@ function getWeeklyGoals()
 		$daysPassed = $today->diff($start)->format("%a");
 		if (strtotime(date("Y-m-d", time())) < strtotime($goal["StartDate"]))
 			$daysPassed = -$daysPassed;
-		$daysPassed--;
 		$versesPerDay = ceil($totalVerses / $goalDays);
 		
 		$collection = getCollection($collectionName);
